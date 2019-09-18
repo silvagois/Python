@@ -1,0 +1,24 @@
+package br.com.crud.bean;
+
+import org.hibernate.tool.hbm2ddl.SchemaExport;
+
+import com.fasterxml.classmate.AnnotationConfiguration;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
+
+public class Start {
+
+	public static void main(String[] args) {
+		@SuppressWarnings("deprecation")
+		public static void main(String[] args) {
+		AnnotationConfiguration conf = new AnnotationConfiguration()
+		.configure("util/hibernate.cfg.xml");
+		conf.addAnnotatedClass(Pessoa.class);
+		SchemaExport sE = new SchemaExport(conf);
+		sE.create(true, true);
+		System.out.println(" A Tabela " + Pessoa.class.getName() + " foi criada.");
+		}
+
+	}
+
+}

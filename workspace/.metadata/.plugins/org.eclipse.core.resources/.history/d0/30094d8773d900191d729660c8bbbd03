@@ -1,0 +1,81 @@
+package br.com.crud.bean;
+
+import java.io.Serializable;
+import java.util.Calendar;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Pessoa")
+@SequenceGenerator(name = "hibernate_sequence_pessoa", sequenceName = "hibernate_sequence_pessoa", allocationSize = 1)
+public class Pessoa implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hibernate_sequence_pessoa")
+	@Column(name = "idPessoa")
+	private Long idPessoa;
+	
+	@Column(name = "nomePessoa")
+	private String nomePessoa;
+	
+	@Column(name = "emailPessoa")
+	private String emailPessoa;
+	
+	@Column(name = "dataNascimento")
+	private Calendar dataNascimento;
+	
+	@Column(name = "generoPessoa")
+	private String generoPessoa;
+
+	public Long getIdPessoa() {
+		return idPessoa;
+	}
+
+	public void setIdPessoa(Long idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
+	public String getNomePessoa() {
+		return nomePessoa;
+	}
+
+	public void setNomePessoa(String nomePessoa) {
+		this.nomePessoa = nomePessoa;
+	}
+
+	public String getEmailPessoa() {
+		return emailPessoa;
+	}
+
+	public void setEmailPessoa(String emailPessoa) {
+		this.emailPessoa = emailPessoa;
+	}
+
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Calendar dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getGeneroPessoa() {
+		return generoPessoa;
+	}
+
+	public void setGeneroPessoa(String generoPessoa) {
+		this.generoPessoa = generoPessoa;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+}

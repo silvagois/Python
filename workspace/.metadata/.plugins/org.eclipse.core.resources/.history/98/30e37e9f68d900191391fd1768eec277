@@ -1,0 +1,5 @@
+package br.com.crud.util;
+
+public class HibernateUtil {
+
+}

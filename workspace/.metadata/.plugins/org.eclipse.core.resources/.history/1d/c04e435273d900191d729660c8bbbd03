@@ -1,0 +1,24 @@
+package br.com.crud.bean;
+
+import java.io.Serializable;
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Pessoa")
+@SequenceGenerator(name = "hibernate_sequence_pessoa", sequenceName = "hibernate_sequence_pessoa", allocationSize = 1)
+public class Pessoa implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private Long idPessoa;
+	private String nomePessoa;
+	private String emailPessoa;
+	private int idadePessoa;
+	private Calendar dataNascimento;
+	private String generoPessoa;
+
+}

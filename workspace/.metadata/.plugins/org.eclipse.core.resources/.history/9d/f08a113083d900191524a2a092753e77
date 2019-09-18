@@ -1,0 +1,56 @@
+package br.com.crud.DaoImpl;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import antlr.collections.List;
+import br.com.crud.bean.Pessoa;
+import br.com.crud.dao.PessoaDao;
+import br.com.crud.util.HibernateUtil;
+
+public class PessoaDaoImpl implements PessoaDao {
+
+	private Session session = null;
+	private Transaction transaction = null;
+
+	public boolean inserePessoa() {
+		boolean retorno = false;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.beginTransaction();
+			System.out.println("DAo- NOME:" +pessoa.getPessoa());
+			session.persist(pessoa);
+			transaction.commit();
+			retorno = true;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public boolean inserePessoa(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean alteraPessoa(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean excluiPessoa(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Pessoa consultarPessoa(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List listarPessoa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
