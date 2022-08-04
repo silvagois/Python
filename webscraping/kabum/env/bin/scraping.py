@@ -9,8 +9,7 @@ import pandas as pd
 import math
 import os 
 
-#path = r"C:/Users/016110631/Documents/python"
-path = r"C:/Users/016110631/Downloads"
+path = r"C:/Users/016110631/Documents/python/df.csv"
 url = "https://www.kabum.com.br/espaco-gamer/cadeiras-gamer"
 
 
@@ -43,7 +42,7 @@ dicionario_produtos = {
 }
 
 # Percorrendo todas as paginas
-for i in range(75,ultima_pagina+1):
+for i in range(1,ultima_pagina+1):
     # alterando o pagenumber para receber o i interador do laço
     url_pagina = f'https://www.kabum.com.br/espaco-gamer/cadeiras-gamer?page_number={i}&page_size=20&facet_filters=&sort=most_searched'
     site = requests.get(url_pagina, headers=headers)
@@ -68,4 +67,5 @@ for i in range(75,ultima_pagina+1):
     print(url_pagina)
 
 df = pd.DataFrame(dicionario_produtos)
-df.to_csv(path, encoding='utf-8',sep= ';')
+#df.to_csv(path, encoding='utf-8',sep= ';', index= False,)
+df.to_csv(path, encoding='utf-8-sig',sep= ';', index= False,)
